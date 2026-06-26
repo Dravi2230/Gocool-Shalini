@@ -29,8 +29,8 @@ export const quizQuestions = [
     id: 4,
     type: 'choice',
     question: 'What were we before becoming lovers? 💕',
-    options: ['Strangers', 'Classmates', 'Childhood Friends ❤️', 'Neighbors'],
-    answer: 'Childhood Friends ❤️',
+    options: ['Strangers', 'Classmates', 'School Friends ❤️', 'Neighbors'],
+    answer: 'School Friends ❤️',
   },
   {
     id: 5,
@@ -105,13 +105,13 @@ export const timeline = [
     icon: '😊',
     title: 'Years of Friendship',
     text: 'Our friendship grew stronger through the years.',
-    image: '/years%20of%20friendship.jpeg',
+    image: '/images/timeline-years.jpeg',
   },
   {
     icon: '💕',
     title: 'The Day Everything Changed',
     text: 'A few months ago, our friendship blossomed into love.',
-    image: '/day%20changed.jpeg',
+    image: '/images/timeline-day-changed.jpeg',
   },
   {
     icon: '❤️',

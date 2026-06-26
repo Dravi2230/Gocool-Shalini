@@ -6,7 +6,7 @@ import { createAmbient } from './ambient.js'
 //
 // The romantic track lives in public/music. If it's missing or unplayable,
 // a gentle generative melody plays instead, so the site is never silent.
-const SONG_SRC = '/music/deema%20song.mpeg'
+const SONG_SRC = '/music/deema-song.mp3'
 
 const MusicCtx = createContext(null)
 export const useMusic = () => useContext(MusicCtx)

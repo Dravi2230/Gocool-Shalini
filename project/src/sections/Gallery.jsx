@@ -4,15 +4,25 @@ import Reveal from '../components/Reveal.jsx'
 
 // Our real photos live in /public/images. Each one carries a little romantic line.
 const initialPhotos = [
-  { src: '/images/memory-1.jpeg', caption: 'The day my whole world got brighter 🌅', h: 'h-80' },
-  { src: '/images/memory-2.jpeg', caption: 'Every moment with you is my favourite 💕', h: 'h-64' },
-  { src: '/images/memory-3.jpeg', caption: 'You + Me = Forever ❤️', h: 'h-72' },
-  { src: '/images/memory-4.jpeg', caption: 'My heart smiles whenever you’re near 🥰', h: 'h-64' },
-  { src: '/images/memory-5.jpeg', caption: 'Lost in your eyes, found in your love ✨', h: 'h-80' },
-  { src: '/images/memory-6.jpeg', caption: 'Just us, and that’s everything 💞', h: 'h-56' },
-  { src: '/images/memory-7.jpeg', caption: 'You make ordinary days feel magical 🌸', h: 'h-72' },
-  { src: '/images/memory-8.jpeg', caption: 'Holding you is holding my whole world 🤍', h: 'h-64' },
-  { src: '/images/memory-9.jpeg', caption: 'Thank you for being my happily ever after 💖', h: 'h-80' },
+  { src: '/images/memory-1.jpeg', caption: 'The day my whole world got brighter 🌅' },
+  { src: '/images/memory-2.jpeg', caption: 'Every moment with you is my favourite 💕' },
+  { src: '/images/memory-3.jpeg', caption: 'You + Me = Forever ❤️' },
+  { src: '/images/memory-4.jpeg', caption: 'My heart smiles whenever you’re near 🥰' },
+  { src: '/images/memory-5.jpeg', caption: 'Lost in your eyes, found in your love ✨' },
+  { src: '/images/memory-6.jpeg', caption: 'Just us, and that’s everything 💞' },
+  { src: '/images/memory-7.jpeg', caption: 'You make ordinary days feel magical 🌸' },
+  { src: '/images/memory-8.jpeg', caption: 'Holding you is holding my whole world 🤍' },
+  { src: '/images/memory-9.jpeg', caption: 'Thank you for being my happily ever after 💖' },
+  { src: '/images/memory-10.jpeg', caption: 'Every smile of yours is my favourite view 😍' },
+  { src: '/images/memory-12.jpeg', caption: 'With you, even the little moments feel big 🌷' },
+  { src: '/images/memory-13.jpeg', caption: 'My calm, my chaos, my everything 💗' },
+  { src: '/images/memory-14.jpeg', caption: 'Forever grateful you’re mine 🥰' },
+  { src: '/images/memory-15.jpeg', caption: 'You + Me, against the whole world 💪❤️' },
+  { src: '/images/memory-16.jpeg', caption: 'My happiest place is right beside you 🏡💞' },
+  { src: '/images/memory-17.jpeg', caption: 'Every day with you is a memory I treasure ✨' },
+  { src: '/images/memory-18.jpeg', caption: 'You make my heart feel at home 🤍' },
+  { src: '/images/timeline-day-changed.jpeg', caption: 'The day everything changed, and my heart found home 💕' },
+  { src: '/images/timeline-years.jpeg', caption: 'From friends to forever — every year with you 🥹💞' },
 ]
 
 export default function Gallery() {
@@ -21,10 +31,9 @@ export default function Gallery() {
 
   const onUpload = (e) => {
     const files = Array.from(e.target.files || [])
-    const added = files.map((f, i) => ({
+    const added = files.map((f) => ({
       src: URL.createObjectURL(f),
       caption: 'Our memory 💖',
-      h: ['h-56', 'h-64', 'h-72', 'h-80'][i % 4],
     }))
     setPhotos((prev) => {
       // fill empty placeholders first, then append
@@ -57,17 +66,17 @@ export default function Gallery() {
             <figure className="glass overflow-hidden rounded-2xl">
               <button
                 onClick={() => p.src && setActive(p)}
-                className={`group relative block w-full overflow-hidden ${p.h}`}
+                className="group relative block w-full overflow-hidden bg-pink-50/40"
               >
                 {p.src ? (
                   <img
                     src={p.src}
                     alt={p.caption}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="glass flex h-full w-full flex-col items-center justify-center gap-2 text-rose-400">
+                  <div className="glass flex h-56 w-full flex-col items-center justify-center gap-2 text-rose-400">
                     <span className="text-4xl">🖼️</span>
                     <span className="font-body text-xs">photo placeholder</span>
                   </div>
