@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: #fff5fa;
+  color: #4a2c3a;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/30 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  .glass-dark {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;
+  }
+  .romantic-gradient {
+    background: linear-gradient(
+      135deg,
+      #ff9a9e 0%,
+      #fecfef 18%,
+      #f5a3ff 36%,
+      #a18cd1 54%,
+      #8fd3f4 72%,
+      #ffd1a4 88%,
+      #ffec9e 100%
+    );
+    background-size: 400% 400%;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #d6336c, #9c36b5, #b76e79);
+  }
+  .btn-romantic {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300;
+    background: linear-gradient(120deg, #f06595, #cc5de8, #b76e79);
+    background-size: 200% 200%;
+  }
+  .btn-romantic:hover {
+    @apply -translate-y-0.5 shadow-2xl;
+    background-position: 100% 50%;
+  }
+}
+
+/* Hide default cursor only on devices with a fine pointer (desktop) */
+@media (pointer: fine) {
+  .heart-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Pretty scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ffe7f0;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#f06595, #cc5de8);
+  border-radius: 10px;
+}
