@@ -115,6 +115,9 @@ export default function LoveQuiz() {
               <p className="mx-auto mt-3 max-w-xs font-body text-base text-rose-900/70">
                 This surprise is just for you, my love. Enter your secret code 💕
               </p>
+              <p className="mx-auto mt-2 max-w-xs font-body text-sm italic text-rose-700/70">
+                Hint: your boyfriend's GPay PIN 😉
+              </p>
 
               <motion.div
                 animate={pinError ? { x: [0, -10, 10, -8, 8, 0] } : { x: 0 }}
